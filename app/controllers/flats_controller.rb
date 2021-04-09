@@ -16,6 +16,9 @@ class FlatsController < ApplicationController
     @flat.save
     redirect_to flat_path(@flat)
   end
+  def proprio
+    @flat = Flat.find(params[:id])
+  end
   def edit
     @flat = Flat.find(params[:id])
   end
@@ -32,6 +35,6 @@ class FlatsController < ApplicationController
 
   private
   def flat_params
-    params.require(:flat).permit(:title, :address, :stars)
+    params.require(:flat).permit(:title, :address, :stars, :proprio)
   end
 end

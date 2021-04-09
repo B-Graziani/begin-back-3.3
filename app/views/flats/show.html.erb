@@ -2,5 +2,8 @@
 <h3><%= @flat.title %></h3>
 
 <p><%= @flat.address %></p>
+<p><%= @flat.proprio %></p>
 <h1><%= @flat.stars %></h1>
+<%= link_to "Proprio", proprio_flat_path(@flat) %>
+<br>
 <%= link_to "retour", flats_path %>
