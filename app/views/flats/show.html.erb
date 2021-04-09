@@ -6,4 +6,18 @@
 <h1><%= @flat.stars %></h1>
 <%= link_to "Proprio", proprio_flat_path(@flat) %>
 <br>
+<%= link_to "Commentaires", new_flat_review_path(@flat) %>
+<ul>
+  <% @flat.reviews.each do |review| %>
+  <li>
+    <%= review.content %>
+    <%= link_to "delete", review_path(review),
+    method: :delete,
+    data: { confirm: "are you sure ?"} %>
+    <% end %>
+  </li>
+</ul>
+<br>
 <%= link_to "retour", flats_path %>
+
+
