@@ -5,3 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+puts "cleaning db"
+Flat.destroy_all
+puts "creating..."
+flat1 = { title: "Duplex", address: "ajaccio, 12 alle des peti bois", stars: "5"}
+flat2 = { title: "Chateau", address: "ajaccio, 12 alle des peti bois", stars: "3"}
+flat3 = { title: "Manoir", address: "ajaccio, 12 alle des peti bois", stars: "2"}
+flat4 = { title: "Studio", address: "ajaccio, 12 alle des peti bois", stars: "1"}
+flat5 = { title: "Island", address: "ajaccio, 12 alle des peti bois", stars: "5"}
+Flats = []
+[flat1, flat2, flat3, flat4, flat5].each_with_index do |attributes, index|
+flat = Flat.create!(attributes)
+Flats << flat
+end
